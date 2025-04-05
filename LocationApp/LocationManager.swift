@@ -135,4 +135,21 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
               UIApplication.shared.canOpenURL(settingsURL) else { return }
         UIApplication.shared.open(settingsURL)
     }
+    
+    func stopTracking() {
+        locationManager.stopUpdatingLocation()
+        locationManager.stopMonitoringSignificantLocationChanges()
+    }
+    
+    // Add these two methods to LocationManager
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+
+    func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+        locationManager.stopMonitoringSignificantLocationChanges()
+    }
+
 }

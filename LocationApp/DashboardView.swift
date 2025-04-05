@@ -41,6 +41,8 @@ struct DashboardView: View {
                 .navigationDestination(item: $selectedAction) { action in
                     if action == .showCurrentLocation {
                         ShowMyLocationView()
+                    } else if action == .startTracking {
+                        StartTrackingView()
                     }
                 }
             }

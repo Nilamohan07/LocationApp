@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct FeatureModel: Identifiable {
     let id = UUID()
@@ -22,4 +23,13 @@ enum FeatureAction: CaseIterable {
     case setGeofence
     case findNearbyPlaces
     case checkWeather
+}
+
+struct IdentifiableLocation: Identifiable, Equatable {
+    let id = UUID()
+    let location: CLLocation
+    
+    var coordinate: CLLocationCoordinate2D {
+        location.coordinate
+    }
 }
